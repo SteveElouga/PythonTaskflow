@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block form %}
+
+<form class="w-full max-w-sm mx-auto px-4 py-2" action="/update/{{ id }}" method="post">
+    <div class="flex items-center border-b-2 border-teal-500 py-2">
+        <input
+            class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            type="text" placeholder="Add a task" id="task" name="task">
+    </div>
+    <div class="flex items-center border-b-2 border-teal-500 py-2">
+        <input
+            class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            type="text" placeholder="Add a description" id="description" name="description">
+    </div>
+    <button
+    class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 hover:transition-all hover:duration-3 text-sm border-4 text-white py-1 px-2 rounded cursor-pointer mt-4"
+    type="submit">
+    Update
+</button>
+</form>
+
+{% endblock %}

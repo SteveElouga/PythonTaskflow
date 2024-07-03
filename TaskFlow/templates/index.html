@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+{% if tasks and not tasks[0] == null %}
+<form class="w-full max-w-sm mx-auto px-4 py-2" action="/add/" method="post">
+    <div class="flex items-center border-b-2 border-teal-500 py-2">
+        <input
+            class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            type="text" placeholder="Add a task" id="task" name="task">
+    </div>
+    <div class="flex items-center border-b-2 border-teal-500 py-2">
+        <input
+            class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            type="text" placeholder="Add a description" id="description" name="description">
+    </div>
+    <button
+        class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 hover:transition-all hover:duration-3 text-sm border-4 text-white py-1 px-2 rounded cursor-pointer mt-4"
+        type="submit">
+        Add
+    </button>
+</form>
+<table class="mx-10 my-10 w-full text-start max-w-[900px] max-[1140px]:w-[800px] max-[1100px]:w-[700px] max-[820px]:w-[600px] max-[660px]:w-[400px] max-[500px]:w-[320px] max-[350px]:w-[300px]">
+    <thead class="font-semibold border-b border-teal-500">
+        <tr>
+            <td>Number</td>
+            <td>Tasks</td>
+            <td>Description</td>
+            <td class="max-[660px]:hidden">Creation date</td>
+            <td class="max-[820px]:hidden">Update date</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+
+    {% for task in tasks %}
+
+    <tbody class="font-thin">
+        <tr class="hover:bg-[#14b8a527]">
+            <td>{{ task.id }}</td>
+            <td>{{ task.name }}</td>
+            <td>{{ task.short_description }}</td>
+            <td class="max-[660px]:hidden">{{ task.created_at }}</td>
+            <td class="max-[820px]:hidden">{{ task.updated_at }}</td>
+            <td class="flex justify-around items-center">
+                <a href="/modif/{{ task.id }}"><i class="fa-solid fa-pen hover:transition-all hover:duration-3 hover:text-[20px] text-teal-500 hover:underline"></i></a>
+                <a href="/delete/{{ task.id }}"><i
+                        class="fa-solid fa-trash  hover:transition-all hover:duration-3 hover:text-[20px] text-red-400"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% else %}
+<p class="my-10">Pas de taches pour le moment! </p>
+{% endif %}
+
+{% endblock %}

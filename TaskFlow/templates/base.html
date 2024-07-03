@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body class="bg-gray-400 font-thin">
+    <div class="max-w-[1100px] mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden mt-16 flex flex-col justify-center items-center max-[1140px]:w-[900px] max-[1100px]:w-[800px] max-[820px]:w-[650px] max-[660px]:w-[450px] max-[500px]:w-[370px] max-[380px]:w-[350px] max-[350px]:w-[320px]"
+        data-aos="fade-up" data-aos-duration="1000">
+        <div class="px-4 py-2">
+            <h1 class="text-gray-800 dark:text-white font-bold text-2xl uppercase">To-Do List</h1>
+        </div>
+        {% block form %} {% endblock %}
+
+        {% block content %} {% endblock %}
+
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init()
+    </script>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 env/
 *.pyc
 __pycache__
-fbapp/static/*.jpg
+Taskflow/static/*.jpg
 app.db
 .cache/
 geckodriver.log

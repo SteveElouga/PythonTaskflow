@@ -1,7 +1,0 @@
-env/
-*.pyc
-__pycache__
-Taskflow/static/*.jpg
-app.db
-.cache/
-geckodriver.log
